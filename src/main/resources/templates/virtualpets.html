@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Virtual Pets</title>
+</head>
+<body>
+<h1>Welcome!</h1>
+<p th:each="virtualpet : ${virtualpets}" th:text="${virtualpet.name}"></p>
+</body>
+</html>
