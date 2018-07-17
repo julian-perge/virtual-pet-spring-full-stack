@@ -1,26 +1,43 @@
 package com.wecancodeit.julian.virtualpetspringfullstack;
 
-import javax.persistence.Entity;
-
-@Entity
 public abstract class OrganicPet extends VirtualPet {
 
-    private int happiness;
+  protected int happiness;
+  protected int hunger;
+  protected int energy;
 
-    protected OrganicPet() {
-    }
+  protected OrganicPet(String name, String description) {
+    super(name, description);
+  }
 
-    public OrganicPet(String name, String description) {
-        super(name, description);
-    }
+  /**
+   * @param name
+   * @param description
+   * @param happiness
+   * @param hunger
+   * @param energy
+   */
+  public OrganicPet(String name, String description, int happiness, int hunger, int energy) {
+    super(name, description);
+    this.happiness = happiness;
+    this.hunger = hunger;
+    this.energy = energy;
+  }
 
-    public OrganicPet(String name, String description, int happiness) {
-        super(name, description);
-        this.happiness = happiness;
-    }
+  public int getHappiness() {
+    return happiness;
+  }
 
-    @Override
-    public String toString() {
-        return "OrganicPet{} " + super.toString();
-    }
+  public int getHunger() {
+    return hunger;
+  }
+
+  public int getEnergy() {
+    return energy;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("%s - Happiness: %s | Hunger: %s | Energy: %s", super.toString(), happiness, hunger, energy);
+  }
 }

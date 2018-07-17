@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>All Virtual Pets</title>
+    <title>Single Pet</title>
 </head>
 <body>
-	<h1>Welcome!</h1>
-	<p th:each="virtualPet : ${virtualPets}" th:text="${virtualPet.name}">
+	<h1>Single Pet Name</h1>
+	<p th:text="${virtualPet.name}">
 	
 	</p>
 </body>

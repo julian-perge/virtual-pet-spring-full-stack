@@ -17,20 +17,19 @@ import static org.junit.Assert.assertTrue;
 @DataJpaTest
 public class OrganicDogTest {
 
-    @Autowired
-    VirtualPetRepository vRepo;
-    private EntityManager em;
+  @Autowired VirtualPetRepository vRepo;
+  private EntityManager em;
 
-    @Test
-    public void shouldGenerateIdValueFromPet() {
-        VirtualPet pet1 = vRepo.save(new OrganicDog());
-        assertThat(pet1.getId(), is(equalTo(1L)));
-    }
+  @Test
+  public void shouldGenerateIdValueFromPet() {
+    VirtualPet pet1 = vRepo.save(new OrganicDog());
+    assertThat(pet1.getId(), is(equalTo(1L)));
+  }
 
-    @Test
-    public void shouldSaveOrganicDogToRepo() {
-        VirtualPet pet1 = vRepo.save(new OrganicDog());
+  @Test
+  public void shouldSaveOrganicDogToRepo() {
+    VirtualPet pet1 = vRepo.save(new OrganicDog());
 
-        assertTrue(vRepo.existsById(pet1.getId()));
-    }
+    assertTrue(vRepo.existsById(pet1.getId()));
+  }
 }
